@@ -1,0 +1,18 @@
+impl Solution {
+    pub fn reverse(x: i32) -> i32 {
+        let mut znak: i32 = 1;
+
+        if x < 0
+        {
+            znak = -1;
+        }
+
+        let y = x*znak;
+        let oddajX: i32 = match y.to_string().chars().rev().collect::<String>().parse::<i32>()
+        {
+            Ok(n) => n*znak,
+            Err(_) => 0,
+        };
+        oddajX
+    }
+}
